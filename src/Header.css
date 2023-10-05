@@ -1,0 +1,26 @@
+.Header{
+
+display: flex;
+
+align-items: center;
+position: sticky;
+top:0;
+
+
+
+
+
+}
+
+.nav_logo{
+
+width: 10px;
+object-fit: contain;
+
+
+
+
+}
+
+
+
