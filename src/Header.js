@@ -1,15 +1,19 @@
 import React from 'react'
 import "./Header.css";
+import SearchIcon from '@mui/icons-material/Search';
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 function Header() {
   return (
     <div class="Header">
     
     
-     <div class="nav_logo">
+     
 
-      <img src='https://pngimg.com/uploads/amazon/amazon_PNG13.png'/>
-      <input class='Header_search' type='text'/>
-        {/*logo*/}
+      <img class="nav_image" src='https://pngimg.com/uploads/amazon/amazon_PNG13.png' alt="Pro"/>
+
+      <div class="Header_search">
+      <input class='Header_search_input' type='text'/>
+        <SearchIcon class="Header_search_icon"/>
 
 
      </div>
@@ -41,6 +45,10 @@ function Header() {
            Your</span>
             <span class='Header_option_lineto'>
            Prime</span>
+          </div>
+
+          <div class="Header_basketCounter">
+           <ShoppingBasketIcon /> 
           </div>
        </div>
     
