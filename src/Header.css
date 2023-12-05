@@ -3,11 +3,14 @@
 /* Header Container */
 .Header {
     display: flex;
+    position: absolute;
     align-items: center;
     justify-content: space-between;
     padding: 10px 5px;
     background-color: #232f3e; /* Change this to your desired background color */
     color: #fff; /* Text color */
+    width: 100%;
+
   }
   
   /* Navigation Logo */
