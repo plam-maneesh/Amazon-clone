@@ -1,70 +1,60 @@
-import React from 'react'
+import React from "react";
 import "./Header.css";
-import SearchIcon from '@mui/icons-material/Search';
-import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+import SearchIcon from "@material-ui/icons/Search";
+import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import { Link } from "react-router-dom";
+import { useStateValue } from "./StateProvider";
+
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 function Header() {
+  const [{ basket, user }, dispatch] = useStateValue();
+
   return (
-    <div class="Header">
+    <div className="header">
+      <Link to="/">
+        <img
+          className="header__logo"
+          src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+        />
+      </Link>
 
-
-
-
-      <img class="nav_image" src='https://pngimg.com/uploads/amazon/amazon_PNG13.png' alt="Pro" />
-
-      <div class="Header_search">
-        <input class='Header_search_input' type='text' />
-        <SearchIcon class="Header_search_icon" />
-
-
+      <div className="header__search">
+        <input className="header__searchInput" type="text" />
+        <SearchIcon className="header__searchIcon" />
       </div>
 
+      <div className="header__nav">
+        
+          <div className="header__option">
+            <span className="header__optionLineOne">Hello Guest</span>
+            <span className="header__optionLineTwo">Sign in</span>
+          </div>
+        
 
+        
+          <div className="header__option">
+            <span className="header__optionLineOne">Returns</span>
+            <span className="header__optionLineTwo">& Orders</span>
+          </div>
+        
+        
 
-
-
-      <div class='Header_nav'>
-        <div class='Header_option'>
-          <span class='Header_option_lineOne'>
-            Hello
-          </span>
-          <span class='Header_option_lineto'>
-            Sign in
-          </span>
+        <div className="header__option">
+          <span className="header__optionLineOne">Your</span>
+          <span className="header__optionLineTwo">Prime</span>
         </div>
 
-        <div class='Header_option'>
-          <span class='Header_option_lineOne'>
-            Returns </span>
-          <span class='Header_option_lineto'>
-            & Orders</span>
-        </div>
-
-        <div class='Header_option'>
-
-          <span class='Header_option_lineOne'>
-            Your</span>
-          <span class='Header_option_lineto'>
-            Prime</span>
-        </div>
-
-        <div class="Header_basketCounter">
-          <ShoppingBasketIcon />
-        </div>
+        <Link to="/checkout">
+          <div className="header__optionBasket">
+            <ShoppingBasketIcon />
+            <span className="header__optionLineTwo header__basketCount">
+              {basket?.length}
+            </span>
+          </div>
+        </Link>
       </div>
-
     </div>
-
-
-
-
-
-
-  )
+  );
 }
 
-
-
-
-
-
-export default Header
+export default Header;
